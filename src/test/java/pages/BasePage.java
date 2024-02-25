@@ -21,10 +21,10 @@ public class BasePage {
 
     }
 
-    public static void tearDown() {
-        LOG.info("Close the browser");
-        driver.quit();
-    }
+//    public static void tearDown() {
+//        LOG.info("Close the browser");
+//        driver.quit();
+//    }
 
     public static String returnBaseUrl() {
         return "https://ambient.ro";

@@ -13,9 +13,9 @@ public class BaseTest {
     public void init(){
         BasePage.setUp();
     }
-    @AfterSuite
-    public void tearDown(){
-        BasePage.tearDown();
-
-    }
+//    @AfterSuite
+//    public void tearDown(){
+//        BasePage.tearDown();
+//
+//    }
 }

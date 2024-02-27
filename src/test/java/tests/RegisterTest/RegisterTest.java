@@ -22,17 +22,21 @@ public class RegisterTest extends BaseTest {
         LOG.info("Typing Full Name");
         registerPage.insertFullname(lName, fName);
 
-        LOG.info("Typing Phone numeber");
+        LOG.info("Typing Phone number");
         registerPage.insertPhoneNumber(phone);
 
         LOG.info("Typing Registration email");
         registerPage.insertRegisterEmail(regEmail);
 
-        LOG.info("Typing registration paswword");
+        LOG.info("Typing registration pasword");
         registerPage.insertRegisterPassword(regPassword);
 
-//        LOG.info("Clicking on Accept Check Box");
-//        registerPage.clickOnAcceptCheckBox();
+        LOG.info("Clicking on Accept Cookies");
+        registerPage.pressAcceptCookies();
+
+        LOG.info("Clicking on Accept Check Box");
+        registerPage.clickOnAcceptCheckBox();
+
 
     }
 

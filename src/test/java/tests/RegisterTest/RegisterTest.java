@@ -11,7 +11,7 @@ public class RegisterTest extends BaseTest {
     String fName = "Elena";
     String phone = "0721123456";
     String regEmail = "abc@email.com";
-    String regPassword = "P@ssw0rd";
+    String regPassword = "P@ssw0rd1234";
 
     @Test
     public void fillRegister() {
@@ -34,9 +34,11 @@ public class RegisterTest extends BaseTest {
         LOG.info("Clicking on Accept Cookies");
         registerPage.pressAcceptCookies();
 
-        LOG.info("Clicking on Accept Check Box");
-        registerPage.clickOnAcceptCheckBox();
+//        LOG.info("Clicking on Accept Check Box");
+//        registerPage.clickOnAcceptCheckBox();
 
+        LOG.info("Click on Register Button");
+        registerPage.pressRegisterButton();
 
     }
 

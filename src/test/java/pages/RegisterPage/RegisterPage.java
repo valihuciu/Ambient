@@ -1,6 +1,8 @@
 package pages.RegisterPage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -26,10 +28,10 @@ public class RegisterPage extends BasePage {
     private By inputRegisterEmail = By.xpath("//input[@id='regemail']");
     private By inputRegisterPassword = By.xpath("//input[@id='regpass']");
     private By clickAcceptCookies = By.id("msbtn-accept-all");
+    private By clickAcceptCheckBox = By.xpath("//label[@for='regaccept']");
     private By registerButton = By.xpath("//span[text()='Inregistrare']");
-    // private By clickAcceptCheckBox = By.xpath("//label[@for='regaccept']");
-    //private By clickAcceptCheckBox = By.xpath("//div[@class='checkbox ck-terms']/label[@for='regaccept']");
-    //private By CheckBox = By.xpath("//div[@class='checkbox ck-terms']/input[@type='checkbox']");
+
+
 
     public void pressMyAcccount() {
         LOG.info("Press My Account");
@@ -62,11 +64,12 @@ public class RegisterPage extends BasePage {
         driver.findElement(clickAcceptCookies).click();
     }
 
-//    public void clickOnAcceptCheckBox() {
-//        LOG.info("Click on Accept Check Box");
-//        Action(driver).move_to_element(label_element).perform()
-//        driver.findElement(clickAcceptCheckBox).click();
-//    }
+    public void clickOnAcceptCheckBox() {
+        LOG.info("Click on Accept Check Box");
+        WebElement element = driver.findElement(clickAcceptCheckBox);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click()", element);
+    }
 
     public void pressRegisterButton() {
         LOG.info("Press Register Button");

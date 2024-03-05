@@ -9,11 +9,13 @@ public class ProduseTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(ProduseTest.class);
 
     @Test
-    public void fillRegister() {
+    public void produse() {
 
+        LOG.info("Click on Produse");
+        produsePage.pressProduse();
 
-
-
+        LOG.info("Click on Gradina");
+        produsePage.pressGradina();
 
     }
 

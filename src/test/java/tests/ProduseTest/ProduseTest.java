@@ -17,6 +17,9 @@ public class ProduseTest extends BaseTest {
         LOG.info("Click on Gradina");
         produsePage.pressGradina();
 
+        LOG.info("Click on Utilaje pt gradina");
+        produsePage.pressUtilaje();
+
     }
 
 }

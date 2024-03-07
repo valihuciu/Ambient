@@ -1,7 +1,6 @@
 package pages.ProdusePage;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -22,6 +21,8 @@ public class ProdusePage extends BasePage {
 
     private By produse = By.xpath("//a[@title='Produse']");
     private By gradina = By.xpath("//p//a[@title='Gradina']");
+    private By utilaje = By.xpath("//img[@alt='Utilaje pentru gradina si accesorii']");
+
 
     public void pressProduse() {
         LOG.info("press Produse");
@@ -31,8 +32,11 @@ public class ProdusePage extends BasePage {
     public void pressGradina() {
         LOG.info("press Produse");
         driver.findElement(gradina).click();
+    }
 
-
+    public void pressUtilaje(){
+        LOG.info("press Utilaje si accesorii");
+        driver.findElement(utilaje).click();
 
     }
 

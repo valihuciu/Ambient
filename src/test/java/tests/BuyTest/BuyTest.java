@@ -29,15 +29,38 @@ public class BuyTest extends BaseTest {
         LOG.info("Pressing Login Button");
         buyPage.pressLoginButton();
 
-        LOG.info("clicking on Produse");
+        LOG.info("Clicking on Accept Cookies");
+        buyPage.pressAcceptCookies();
+
+        sleep(500);
+
+        LOG.info("clicking on 'Alege magazin'");
+        buyPage.pressStore();
+
+        sleep(1500);
+
+        LOG.info("selecting the 'Bistrita' store");
+        buyPage.selectStore();
+
+        sleep(1000);
+
+        LOG.info("clicking on 'Produse'");
         buyPage.pressProduse();
 
+        sleep(1000);
 
-//        LOG.info("clicking Finisaje");
-//        buyPage.pressFinisaje();
+        LOG.info("clicking 'Finisaje'");
+        buyPage.pressFinisaje();
 
-//        LOG.info("clicking 'mochete,covoare'");
-//        buyPage.pressCovoare();
+        sleep(1000);
+
+        LOG.info("clicking 'Ferestre'");
+        buyPage.pressferestre();
+
+        sleep(500);
+
+        LOG.info("adding a product to cart");
+        buyPage.pressAddToCart();
 
 
     }

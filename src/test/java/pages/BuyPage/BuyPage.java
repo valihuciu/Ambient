@@ -23,9 +23,14 @@ public class BuyPage extends BasePage {
     private By enterEmail = By.xpath("//input[@id='loginemail']");
     private By enterPassword = By.xpath("//input[@id='loginpass']");
     private By pressLoginButton = By.xpath("//span[text()='Login']");
+    private By clickAcceptCookies = By.id("msbtn-accept-all");
+    private By selectStore = By.xpath("//button[@data-bs-toggle='modal']");
+    private By storeBistrita=By.xpath("//a[@title='Bistrita']");
     private By produse = By.xpath("//ul//li//a[@title='Produse']");
-    private By finisaje = By.xpath("//p//a[@title='Finisaje']");
-    private By covoare = By.xpath("//p//a[@title='Mocheta, covoare, linoleum si presuri']");
+    private By finisaje = By.xpath("//a[text()='Finisaje']");
+    private By ferestre = By.xpath("//p//a[@title='Ferestre']");
+    private By addProduct = By.xpath("//button[@data-id='9481']");
+
 
 
 
@@ -49,6 +54,21 @@ public class BuyPage extends BasePage {
         driver.findElement(pressLoginButton).click();
     }
 
+    public void pressAcceptCookies() {
+        LOG.info("Press Accept Cookies");
+        driver.findElement(clickAcceptCookies).click();
+    }
+
+    public void pressStore(){
+        LOG.info("press 'Alege magazin'");
+        driver.findElement(selectStore).click();
+    }
+
+    public void selectStore(){
+        LOG.info("select the 'Bistrita' store");
+        driver.findElement(storeBistrita).click();
+    }
+
     public void pressProduse() {
         LOG.info("press Produse");
         driver.findElement(produse).click();
@@ -59,9 +79,16 @@ public class BuyPage extends BasePage {
         driver.findElement(finisaje).click();
     }
 
-    public void pressCovoare(){
-        LOG.info("press covoare");
-        driver.findElement(covoare).click();
+    public void pressferestre(){
+        LOG.info("press ferestre");
+        driver.findElement(ferestre).click();
     }
+
+    public void pressAddToCart(){
+        LOG.info("press add product to cart");
+        driver.findElement(addProduct).click();
+    }
+
+
 
 }

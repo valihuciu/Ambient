@@ -19,7 +19,7 @@ public class ProdusePage extends BasePage {
         return instance;
     }
 
-    private By produse = By.xpath("//a[@title='Produse']");
+    private By produse = By.xpath("//ul//li//a[@title='Produse']");
     private By gradina = By.xpath("//p//a[@title='Gradina']");
     private By utilaje = By.xpath("//img[@alt='Utilaje pentru gradina si accesorii']");
     private By motosape = By.xpath("//a[text()='Motosape']");

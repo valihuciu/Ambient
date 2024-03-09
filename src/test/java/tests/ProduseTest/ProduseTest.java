@@ -2,6 +2,7 @@ package tests.ProduseTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
@@ -23,6 +24,12 @@ public class ProduseTest extends BaseTest {
 
         LOG.info("click on Motosape");
         produsePage.pressMotosape();
+
+        LOG.info("Verify if the product 'Motocultor 6CP' is displayed");
+        Assert.assertTrue(produsePage.isMotocultor6cpDisplayed(), "'Motocultor 6CP' is not displayed");
+
+        LOG.info("Verify if the product 'Motocultor 8CP' is displayed");
+        Assert.assertTrue(produsePage.isMotocultor8cpDisplayed(), "'Motocultor 8CP' is not displayed");
 
         LOG.info("click on consent button");
         produsePage.pressConsent();
@@ -59,6 +66,9 @@ public class ProduseTest extends BaseTest {
 
         LOG.info("reseting sort");
         produsePage.resetSort();
+
+        LOG.info("returning to Home Page");
+        produsePage.clickLogo();
 
     }
 

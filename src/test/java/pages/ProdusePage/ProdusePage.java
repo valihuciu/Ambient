@@ -23,6 +23,8 @@ public class ProdusePage extends BasePage {
     private By gradina = By.xpath("//p//a[@title='Gradina']");
     private By utilaje = By.xpath("//img[@alt='Utilaje pentru gradina si accesorii']");
     private By motosape = By.xpath("//a[text()='Motosape']");
+    private By motocultor6cp = By.xpath("//figure//a[@title='Motocultor 6CP 173CC DZ-M147-S001-G01']");
+    private By motocultor8cp = By.xpath("//figure//a[@title='Motocultor 8CP 212CC DZ-M122-S001-G02']");
     private By consent = By.id("msbtn-accept-all");
     private By reseteaza = By.xpath("//a[@data-bs-original-title = 'Reseteaza']");
     private By sortare = By.id("dropdownMenuButton");
@@ -31,6 +33,7 @@ public class ProdusePage extends BasePage {
     private By sortareNumeCresc = By.xpath("//a[text()='Nume crescator']");
     private By sortareNumeDesc = By.xpath("//a[text()='Nume descrescator']");
     private By resetSort = By.xpath("//a[text()='Reseteaza']");
+    private By Logo = By.xpath("//img[@alt='Ambient']");
 
 
     public void pressProduse() {
@@ -51,6 +54,16 @@ public class ProdusePage extends BasePage {
     public void pressMotosape() {
         LOG.info("select filter Motosape");
         driver.findElement(motosape).click();
+    }
+
+    public boolean isMotocultor6cpDisplayed() {
+        LOG.info("Verify if 'Motocultor 6CP' is displayed");
+        return driver.findElement(motocultor6cp).isDisplayed();
+    }
+
+    public boolean isMotocultor8cpDisplayed() {
+        LOG.info("Verify if 'Motocultor 8CP' is displayed");
+        return driver.findElement(motocultor8cp).isDisplayed();
     }
 
     public void pressConsent() {
@@ -88,9 +101,15 @@ public class ProdusePage extends BasePage {
         driver.findElement(sortareNumeDesc).click();
     }
 
-    public void resetSort(){
+    public void resetSort() {
         LOG.info("press Sort reset");
         driver.findElement(resetSort).click();
     }
+
+    public void clickLogo() {
+        LOG.info("click on Logo to go to Home page");
+        driver.findElement(Logo).click();
+    }
+
 
 }

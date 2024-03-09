@@ -30,13 +30,19 @@ public class BasePage {
         return "https://ambient.ro";
     }
 
-    public static String getBaseUrl(){
+    public static String getBaseUrl() {
         String baseurl = returnBaseUrl();
-        if (baseurl != null){
+        if (baseurl != null) {
             return baseurl.replace("Index.html", "");
         }
         return baseurl;
     }
 
-
+    public static void sleep(long ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

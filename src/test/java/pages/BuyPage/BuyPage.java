@@ -25,13 +25,16 @@ public class BuyPage extends BasePage {
     private By pressLoginButton = By.xpath("//span[text()='Login']");
     private By clickAcceptCookies = By.id("msbtn-accept-all");
     private By selectStore = By.xpath("//button[@data-bs-toggle='modal']");
-    private By storeBistrita=By.xpath("//a[@title='Bistrita']");
+    private By storeBistrita = By.xpath("//a[@title='Bistrita']");
     private By produse = By.xpath("//ul//li//a[@title='Produse']");
     private By finisaje = By.xpath("//a[text()='Finisaje']");
     private By ferestre = By.xpath("//p//a[@title='Ferestre']");
     private By addProduct = By.xpath("//button[@data-id='9481']");
-
-
+    private By cartIcon = By.xpath("//a[@class='top-link menu-cart active']");
+    private By cartDetails = By.xpath("//a[@class='btn btn-success btn-xs py-2 d-block ']");
+    private By productInCart = By.xpath("//h3//a[@title='Fereastra PVC stejar 71x116cm, dubla deschidere, 4 camere, dreapta']");
+    private By plusButton = By.xpath("//button[@data-type='plus']");
+    private By total=By.xpath("//h4//span[text()='2007 Lei']");
 
 
     public void pressMyAcccount() {
@@ -59,12 +62,12 @@ public class BuyPage extends BasePage {
         driver.findElement(clickAcceptCookies).click();
     }
 
-    public void pressStore(){
+    public void pressStore() {
         LOG.info("press 'Alege magazin'");
         driver.findElement(selectStore).click();
     }
 
-    public void selectStore(){
+    public void selectStore() {
         LOG.info("select the 'Bistrita' store");
         driver.findElement(storeBistrita).click();
     }
@@ -74,21 +77,44 @@ public class BuyPage extends BasePage {
         driver.findElement(produse).click();
     }
 
-    public void pressFinisaje(){
+    public void pressFinisaje() {
         LOG.info("press Finisaje");
         driver.findElement(finisaje).click();
     }
 
-    public void pressferestre(){
+    public void pressferestre() {
         LOG.info("press ferestre");
         driver.findElement(ferestre).click();
     }
 
-    public void pressAddToCart(){
+    public void pressAddToCart() {
         LOG.info("press add product to cart");
         driver.findElement(addProduct).click();
     }
 
+    public void pressCart() {
+        LOG.info("press on cart icon");
+        driver.findElement(cartIcon).click();
+    }
 
+    public void pressCartDetails() {
+        LOG.info("press on cart details button");
+        driver.findElement(cartDetails).click();
+    }
+
+    public boolean isProductDisplayed() {
+        LOG.info("Verify if 'Fereastra PVC stejar 71x116cm, dubla deschidere, 4 camere, dreapta' is displayed");
+        return driver.findElement(productInCart).isDisplayed();
+    }
+
+    public void pressPlusButton(){
+        LOG.info("press plus button to increase the number of pieces");
+        driver.findElement(plusButton).click();
+    }
+
+    public boolean isTotalDisplayed() {
+        LOG.info("Verify if the total is displayed correctly");
+        return driver.findElement(total).isDisplayed();
+    }
 
 }

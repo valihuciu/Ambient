@@ -2,6 +2,7 @@ package tests.BuyTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
@@ -37,7 +38,7 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking on 'Alege magazin'");
         buyPage.pressStore();
 
-        sleep(1500);
+        sleep(2000);
 
         LOG.info("selecting the 'Bistrita' store");
         buyPage.selectStore();
@@ -62,7 +63,31 @@ public class BuyTest extends BaseTest {
         LOG.info("adding a product to cart");
         buyPage.pressAddToCart();
 
+        sleep(1000);
 
+        LOG.info("clicking on cart icon");
+        buyPage.pressCart();
+
+        sleep(500);
+
+        LOG.info("clicking on cart details button");
+        buyPage.pressCartDetails();
+
+        LOG.info("Verify if the product 'Fereastra PVC stejar 71x116cm, dubla deschidere, 4 camere, dreapta' is displayed in the Cart");
+        Assert.assertTrue(buyPage.isProductDisplayed(), "'Fereastra PVC stejar 71x116cm, dubla deschidere, 4 camere, dreapta' is not displayed");
+
+        LOG.info("clicking the plus button");
+        buyPage.pressPlusButton();
+
+        sleep(1000);
+
+        LOG.info("clicking the plus button again to increase at 3 pieces");
+        buyPage.pressPlusButton();
+
+        sleep(500);
+
+        LOG.info("Verify if the total is correctly displayed");
+        Assert.assertTrue(buyPage.isTotalDisplayed(), "Total is not displayed correctly");
     }
 
 }

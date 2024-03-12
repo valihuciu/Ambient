@@ -34,7 +34,15 @@ public class BuyPage extends BasePage {
     private By cartDetails = By.xpath("//a[@class='btn btn-success btn-xs py-2 d-block ']");
     private By productInCart = By.xpath("//h3//a[@title='Fereastra PVC stejar 71x116cm, dubla deschidere, 4 camere, dreapta']");
     private By plusButton = By.xpath("//button[@data-type='plus']");
-    private By total=By.xpath("//h4//span[text()='2007 Lei']");
+    private By total = By.xpath("//h4//span[text()='2007 Lei']");
+    private By nextButton = By.xpath("//a[@title='Mergi la pasul urmator']");
+    private By delivery = By.xpath("//a[@data-bs-target='#adddelivery']");
+    private By addCounty = By.xpath("//button[@data-id='adddelcounty']");
+    private By selectCounty = By.xpath("//span[text()='Bistrita-Nasaud']");
+    private By addCity = By.xpath("//button[@data-id='adddelcity']");
+    private By selectCity = By.xpath("//span[text()='BISTRITA']");
+    private By address = By.id("adddeladdress");
+    private By addButton = By.xpath("//span[text()='Adauga']");
 
 
     public void pressMyAcccount() {
@@ -107,7 +115,7 @@ public class BuyPage extends BasePage {
         return driver.findElement(productInCart).isDisplayed();
     }
 
-    public void pressPlusButton(){
+    public void pressPlusButton() {
         LOG.info("press plus button to increase the number of pieces");
         driver.findElement(plusButton).click();
     }
@@ -116,5 +124,46 @@ public class BuyPage extends BasePage {
         LOG.info("Verify if the total is displayed correctly");
         return driver.findElement(total).isDisplayed();
     }
+
+    public void pressNextButton() {
+        LOG.info("press on 'Mergi la pasul urmator' button");
+        driver.findElement(nextButton).click();
+    }
+
+    public void pressAddDelivery() {
+        LOG.info("press on 'Adauga' button o delivery");
+        driver.findElement(delivery).click();
+    }
+
+    public void pressChooseCounty() {
+        LOG.info("press on 'Alege judet' button");
+        driver.findElement(addCounty).click();
+    }
+
+    public void selectCounty() {
+        LOG.info("select 'Bistrita-Nasaud' county");
+        driver.findElement(selectCounty).click();
+    }
+
+    public void pressChooseCity() {
+        LOG.info("press on 'Alege localitate' button");
+        driver.findElement(addCity).click();
+    }
+
+    public void selectCity() {
+        LOG.info("select 'Bistrita' city");
+        driver.findElement(selectCity).click();
+    }
+
+    public void insertAddress(String adresa) {
+        LOG.info("insert address");
+        driver.findElement(address).sendKeys(adresa);
+    }
+
+    public void pressAddButton() {
+        LOG.info("press Add button");
+        driver.findElement(addButton).click();
+    }
+
 
 }

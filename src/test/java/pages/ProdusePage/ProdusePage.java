@@ -36,7 +36,6 @@ public class ProdusePage extends BasePage {
     private By Logo = By.xpath("//img[@alt='Ambient']");
 
 
-
     public void pressProduse() {
         LOG.info("press Produse");
         driver.findElement(produse).click();

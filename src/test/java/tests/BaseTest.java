@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.BasePage;
 import pages.BuyPage.BuyPage;

@@ -13,6 +13,7 @@ public class BuyTest extends BaseTest {
 
     String loginEmail = "ghj@email.com";
     String loginPassword = "P@ssw0rd1234";
+    String adresa = "Strada Sperantei, nr.7";
 
     @Test
     public void buyProduct() {
@@ -88,6 +89,39 @@ public class BuyTest extends BaseTest {
 
         LOG.info("Verify if the total is correctly displayed");
         Assert.assertTrue(buyPage.isTotalDisplayed(), "Total is not displayed correctly");
+
+        LOG.info("clicking on 'Mergi la pasul urmator button'");
+        buyPage.pressNextButton();
+
+        LOG.info("clicking on 'Adauga' button on delivery");
+        buyPage.pressAddDelivery();
+
+        sleep(500);
+
+        LOG.info("clicking on 'Alege judet' button");
+        buyPage.pressChooseCounty();
+
+        sleep(500);
+
+        LOG.info("selecting 'Bistrita-Nasaud' county");
+        buyPage.selectCounty();
+
+        sleep(500);
+
+        LOG.info("clicking on 'Alege localitate' button");
+        buyPage.pressChooseCity();
+
+        sleep(500);
+
+        LOG.info("selecting 'Bistrita' city");
+        buyPage.selectCity();
+
+        LOG.info("insering address");
+        buyPage.insertAddress(adresa);
+
+        LOG.info("pressing add button");
+        buyPage.pressAddButton();
+
     }
 
 }

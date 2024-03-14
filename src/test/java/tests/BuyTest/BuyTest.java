@@ -96,7 +96,7 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking on 'Adauga' button on delivery");
         buyPage.pressAddDelivery();
 
-        sleep(500);
+        sleep(1000);
 
         LOG.info("clicking on 'Alege judet' button");
         buyPage.pressChooseCounty();
@@ -106,7 +106,7 @@ public class BuyTest extends BaseTest {
         LOG.info("selecting 'Bistrita-Nasaud' county");
         buyPage.selectCounty();
 
-        sleep(500);
+        sleep(1000);
 
         LOG.info("clicking on 'Alege localitate' button");
         buyPage.pressChooseCity();

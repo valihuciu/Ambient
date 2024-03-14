@@ -30,7 +30,7 @@ public class RegisterPage extends BasePage {
     private By clickAcceptCookies = By.id("msbtn-accept-all");
     private By clickAcceptCheckBox = By.xpath("//label[@for='regaccept']");
     private By registerButton = By.xpath("//span[text()='Inregistrare']");
-
+    private By errorMessage = By.xpath("//div[text()='  Adresa de email este deja folosita.']");
 
 
     public void pressMyAcccount() {
@@ -76,6 +76,10 @@ public class RegisterPage extends BasePage {
         driver.findElement(registerButton).click();
     }
 
+    public boolean isErrorDisplayed() {
+        LOG.info("Verify if the error  'Adresa de email este deja folosita' is displayed");
+        return driver.findElement(errorMessage).isDisplayed();
+    }
 
 
 }

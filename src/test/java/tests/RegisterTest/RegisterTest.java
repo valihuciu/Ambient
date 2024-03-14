@@ -2,8 +2,11 @@ package tests.RegisterTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
+import static pages.BasePage.sleep;
 
 public class RegisterTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(RegisterTest.class);
@@ -12,6 +15,7 @@ public class RegisterTest extends BaseTest {
     String phone = "0721123456";
     String regEmail = "ghj@email.com";
     String regPassword = "P@ssw0rd1234";
+
 
     @Test
     public void fillRegister() {
@@ -39,6 +43,11 @@ public class RegisterTest extends BaseTest {
 
         LOG.info("Click on Register Button");
         registerPage.pressRegisterButton();
+
+        sleep(500);
+
+        LOG.info("Verify if the error 'Adresa de email este deja folosita' is displayed");
+        Assert.assertTrue(registerPage.isErrorDisplayed(), "the error 'Adresa de email este deja folosita' is not displayed");
 
     }
 

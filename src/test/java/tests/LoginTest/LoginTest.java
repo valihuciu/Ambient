@@ -2,8 +2,11 @@ package tests.LoginTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
+import static pages.BasePage.sleep;
 
 public class LoginTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(LoginTest.class);
@@ -24,6 +27,11 @@ public class LoginTest extends BaseTest {
 
         LOG.info("Pressing Login Button");
         loginPage.pressLoginButton();
+
+        sleep(500);
+
+        LOG.info("Verify if 'Detalii cont' is displayed");
+        Assert.assertTrue(loginPage.isMessageDisplayed(), "'Detalii cont' is not displayed");
 
 
     }

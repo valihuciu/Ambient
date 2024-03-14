@@ -23,6 +23,8 @@ public class LoginPage extends BasePage {
     private By enterEmail = By.xpath("//input[@id='loginemail']");
     private By enterPassword = By.xpath("//input[@id='loginpass']");
     private By pressLoginButton = By.xpath("//span[text()='Login']");
+    private By accountDetails = By.xpath("//h1[text()='Detalii cont']");
+
 
     public void pressMyAcccount() {
         LOG.info("Press My Account");
@@ -42,6 +44,11 @@ public class LoginPage extends BasePage {
     public void pressLoginButton() {
         LOG.info("pressing Login button");
         driver.findElement(pressLoginButton).click();
+    }
+
+    public boolean isMessageDisplayed() {
+        LOG.info("Verify if 'Detalii cont' is displayed");
+        return driver.findElement(accountDetails).isDisplayed();
     }
 
 }

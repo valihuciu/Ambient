@@ -2,6 +2,7 @@ package tests.SearchTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 import tests.BuyTest.BuyTest;
@@ -91,5 +92,11 @@ public class SearchTest extends BaseTest {
         LOG.info("clicking on remove product 2");
         searchPage.removeProduct();
 
+        sleep(1000);
+
+        LOG.info("Verify if the message 'Cosul de cumparaturi este gol' is displayed");
+        Assert.assertTrue(searchPage.isTextDisplayed(), "'Cosul de cumparaturi este gol'");
+
+        sleep(1500L);
     }
 }

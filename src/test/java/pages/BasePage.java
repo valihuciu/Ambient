@@ -11,7 +11,7 @@ public class BasePage {
 
     public static void setUp() {
         LOG.info("Start test");
-        System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver121.exe");
+        System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver122.exe");
         driver = new ChromeDriver();
         String url = "https://ambient.ro";
         driver.get(url);
@@ -21,10 +21,10 @@ public class BasePage {
 
     }
 
-//    public static void tearDown() {
-//        LOG.info("Close the browser");
-//        driver.quit();
-//    }
+    public static void tearDown() {
+        LOG.info("Close the browser");
+        driver.quit();
+    }
 
     public static String returnBaseUrl() {
         return "https://ambient.ro";

@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
         LOG.info("Verify if 'Detalii cont' is displayed");
         Assert.assertTrue(loginPage.isMessageDisplayed(), "'Detalii cont' is not displayed");
 
-
+        sleep(1500L);
     }
 
 }

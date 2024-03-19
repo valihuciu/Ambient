@@ -49,6 +49,7 @@ public class RegisterTest extends BaseTest {
         LOG.info("Verify if the error 'Adresa de email este deja folosita' is displayed");
         Assert.assertTrue(registerPage.isErrorDisplayed(), "the error 'Adresa de email este deja folosita' is not displayed");
 
+        sleep(1500);
     }
 
 }

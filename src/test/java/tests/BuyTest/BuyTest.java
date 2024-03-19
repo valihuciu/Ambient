@@ -122,6 +122,7 @@ public class BuyTest extends BaseTest {
         LOG.info("pressing add button");
         buyPage.pressAddButton();
 
+        sleep(1500L);
     }
 
 }

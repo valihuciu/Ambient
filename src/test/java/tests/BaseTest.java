@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.BasePage;
 import pages.BuyPage.BuyPage;
@@ -22,9 +23,9 @@ public class BaseTest {
         BasePage.setUp();
     }
 
-//    @AfterSuite
-//    public void tearDown() {
-//        BasePage.tearDown();
-//
-//    }
+    @AfterSuite
+    public void tearDown() {
+        BasePage.tearDown();
+
+    }
 }

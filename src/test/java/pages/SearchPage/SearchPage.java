@@ -25,6 +25,7 @@ public class SearchPage extends BasePage {
     private By addToCart = By.xpath("//button[@data-id='8630']");
     private By addToCart2 = By.xpath("//button[@data-id='5601']");
     private By removeProduct = By.xpath("//button//i[@class='las la-times']");
+    private By emptyCart = By.xpath("//h4[@class=' mb-0 mt-0 py-1 ']");
 
 
     public void insertProduct(String product) {
@@ -51,5 +52,11 @@ public class SearchPage extends BasePage {
         LOG.info("press remove product button");
         driver.findElement(removeProduct).click();
     }
+
+    public boolean isTextDisplayed() {
+        LOG.info("Verify if the message 'Cosul de cumparaturi este gol' is displayed");
+        return driver.findElement(emptyCart).isDisplayed();
+    }
+
 
 }

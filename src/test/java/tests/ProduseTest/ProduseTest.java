@@ -70,6 +70,7 @@ public class ProduseTest extends BaseTest {
         LOG.info("returning to Home Page");
         produsePage.clickLogo();
 
+
     }
 
 }

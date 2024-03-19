@@ -81,5 +81,4 @@ public class RegisterPage extends BasePage {
         return driver.findElement(errorMessage).isDisplayed();
     }
 
-
 }

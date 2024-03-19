@@ -58,5 +58,4 @@ public class SearchPage extends BasePage {
         return driver.findElement(emptyCart).isDisplayed();
     }
 
-
 }

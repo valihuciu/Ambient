@@ -42,7 +42,7 @@ public class ProdusePage extends BasePage {
     }
 
     public void pressGradina() {
-        LOG.info("press Produse");
+        LOG.info("press Gradina");
         driver.findElement(gradina).click();
     }
 

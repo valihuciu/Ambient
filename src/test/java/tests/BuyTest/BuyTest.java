@@ -34,7 +34,7 @@ public class BuyTest extends BaseTest {
         LOG.info("Clicking on Accept Cookies");
         buyPage.pressAcceptCookies();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("clicking on 'Alege magazin'");
         buyPage.pressStore();
@@ -59,7 +59,7 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking 'Ferestre'");
         buyPage.pressferestre();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("adding a product to cart");
         buyPage.pressAddToCart();
@@ -69,7 +69,7 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking on cart icon");
         buyPage.pressCart();
 
-        sleep(500);
+        sleep(1000);
 
         LOG.info("clicking on cart details button");
         buyPage.pressCartDetails();
@@ -85,10 +85,12 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking the plus button again to increase at 3 pieces");
         buyPage.pressPlusButton();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("Verify if the total is correctly displayed");
         Assert.assertTrue(buyPage.isTotalDisplayed(), "Total is not displayed correctly");
+
+        sleep(100L);
 
         LOG.info("clicking on 'Mergi la pasul urmator button'");
         buyPage.pressNextButton();
@@ -101,7 +103,7 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking on 'Alege judet' button");
         buyPage.pressChooseCounty();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("selecting 'Bistrita-Nasaud' county");
         buyPage.selectCounty();
@@ -111,7 +113,7 @@ public class BuyTest extends BaseTest {
         LOG.info("clicking on 'Alege localitate' button");
         buyPage.pressChooseCity();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("selecting 'Bistrita' city");
         buyPage.selectCity();

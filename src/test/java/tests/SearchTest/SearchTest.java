@@ -32,17 +32,17 @@ public class SearchTest extends BaseTest {
         LOG.info("Pressing Login Button");
         loginPage.pressLoginButton();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("inserting product in the search field");
         searchPage.insertProduct(product);
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("pressing search button");
         searchPage.pressSearch();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("clicking on 'Alege magazin'");
         buyPage.pressStore();
@@ -52,27 +52,27 @@ public class SearchTest extends BaseTest {
         LOG.info("selecting the 'Bistrita' store");
         buyPage.selectStore();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("pressing add to cart button");
         searchPage.addToCart();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("inserting product 2 in the search field");
         searchPage.insertProduct(product2);
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("pressing search button");
         searchPage.pressSearch();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("pressing add to cart button");
         searchPage.addToCart2();
 
-        sleep(500);
+        sleep(1500L);
 
         LOG.info("clicking on cart icon");
         buyPage.pressCart();
@@ -82,12 +82,12 @@ public class SearchTest extends BaseTest {
         LOG.info("clicking on cart details button");
         buyPage.pressCartDetails();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("clicking on remove product 1");
         searchPage.removeProduct();
 
-        sleep(500);
+        sleep(500L);
 
         LOG.info("clicking on remove product 2");
         searchPage.removeProduct();
@@ -97,6 +97,6 @@ public class SearchTest extends BaseTest {
         LOG.info("Verify if the message 'Cosul de cumparaturi este gol' is displayed");
         Assert.assertTrue(searchPage.isTextDisplayed(), "'Cosul de cumparaturi este gol'");
 
-        sleep(1500L);
+        sleep(2000L);
     }
 }
